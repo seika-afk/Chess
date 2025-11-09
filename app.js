@@ -78,7 +78,7 @@ if (result){
 
 currentPlayer=chess.turn();
 io.emit("move",move);
-io.emit("boardState",chess.fn())
+io.emit("boardState",chess.fen())
 }
 else{
 
@@ -89,7 +89,7 @@ console.log("Invalid Move : ", move);
 }
 catch(err){
 console.log(err);
-uniqueSocket.emit("Invalid move : ",move)
+uniqueSocket.emit("invalidMove : ",move)
 }
 
 })
